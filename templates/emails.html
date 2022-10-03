@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Emails</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/emails.css') }}">
+</head>
+<body>
+<a href={{url_for("main_page")}}>Main page</a><br><br>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+
+    {% for email in emails %}
+        <tr>
+            <td><p>{{ email.name }}</p></td>
+            <td><p>{{ email.email }}</p></td>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
