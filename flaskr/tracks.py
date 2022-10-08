@@ -1,5 +1,5 @@
 from flask import (
-    Blueprint, render_template, request
+    Blueprint, render_template
 )
 
 from flaskr.db import get_db
@@ -18,8 +18,7 @@ def names():
     unique_artists = db.execute(
         'SELECT DISTINCT artist FROM tracks'
     ).fetchall()
-    return render_template('tracks/unique_artists.html', artists=unique_artists)
-
+    return render_template('tracks/unique_artists.html', unique_artists_cnt=len(unique_artists), artists=unique_artists)
 
 
 @bp.route('/tracks/', defaults={'genre': None})
