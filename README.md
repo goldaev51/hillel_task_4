@@ -17,4 +17,9 @@ PATH: /tracks-sec/
 PATH: /tracks-sec/statistics/
 
 
- 
+To start program open terminal in folder where current process exists
+Than run this commands:
+1. flask --app flaskr init-db (Initialize database)
+2. flask --app flaskr fill-db (Fill db)
+3. flask --app flaskr --debug run (Start server)
+
