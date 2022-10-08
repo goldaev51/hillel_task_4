@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if genre is not none %}
+        {{ genre }}
+    {% else %}
+        All
+    {% endif %}
+    tracks count{% endblock %}
+
+
+{% block content %}
+    <a href={{url_for("tracks.main_page")}}>Tracks main page</a><br><br>
+    <h2 class="body">Count of
+        {% if genre is not none %}
+            {{ genre }}
+        {% else %}
+            all tracks
+        {% endif %}
+        tracks: {{ tracks_count }}</h2>
+    <p>Also you can count tracks of one of genres below, just add one of them as parameter like genre=rock</p>
+    {% for genre in genres %}
+        <a href={{ url_for('tracks.get_genre_count', genre=genre['title']) }}>{{ genre['title'] }}</a>
+    {% endfor %}
+{% endblock %}

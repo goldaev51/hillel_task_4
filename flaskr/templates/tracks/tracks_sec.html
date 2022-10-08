@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Tracks sec{% endblock %}
+
+{% block header %}
+    <h1>Tracks sec</h1>
+{% endblock %}
+
+{% block content %}
+    <a href={{url_for("tracks.main_page")}}>Tracks main page</a><br><br>
+    <table>
+        <tr>
+            <th>Track</th>
+            <th>Length(sec)</th>
+        </tr>
+
+        {% for track in tracks %}
+            <tr>
+                <td><p>{{ track['title'] }}</p></td>
+                <td><p>{{ track['length'] }}</p></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}

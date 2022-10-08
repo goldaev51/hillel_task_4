@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Tracks statistics{% endblock %}
+
+{% block header %}
+    <h1>Tracks statistics</h1>
+{% endblock %}
+
+{% block content %}
+    <a href={{ url_for("tracks.main_page") }}>Tracks main page</a><br><br>
+    <p class="body">tracks_avg: {{ tracks_mean }}</p>
+    <p class="body">tracks_sum: {{ tracks_sum }}</p>
+{% endblock %}

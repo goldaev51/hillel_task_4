@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Emails{% endblock %}
+
+{% block header %}
+    <h1>Emails</h1>
+{% endblock %}
+
+{% block content %}
+    <a href={{ url_for("hw2.main_page") }}>Main page</a><br><br>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+
+        {% for email in emails %}
+            <tr>
+                <td><p>{{ email.name }}</p></td>
+                <td><p>{{ email.email }}</p></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
