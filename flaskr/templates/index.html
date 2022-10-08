@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Project main Page{% endblock %}
+
+{% block header %}
+    <h1>Project main Page</h1>
+{% endblock %}
+
+{% block content %}
+<a href={{url_for("hw2.main_page")}}>Homework 2</a><br><br>
+<a href={{url_for("tracks.main_page")}}>Homework 3</a><br><br>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Space{% endblock %}
+
+{% block header %}
+    <h1>Space</h1>
+{% endblock %}
+
+{% block content %}
+    <a href={{ url_for("hw2.main_page") }}>Main page</a><br><br>
+    <p>Number of astronauts in space: {{ astronaut_count }}</p>
+    <table>
+        <tr>
+            <th>Craft</th>
+            <th>Name</th>
+        </tr>
+        {% for astronaut in astronauts %}
+            <tr>
+                <td><p>{{ astronaut.craft }}</p></td>
+                <td><p>{{ astronaut.name }}</p></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
