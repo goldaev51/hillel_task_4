@@ -66,7 +66,7 @@ def tracks_sec():
     return render_template('tracks/tracks_sec.html', tracks=tracks)
 
 
-@bp.route('/tracks-sec/statistics')
+@bp.route('/tracks-sec/statistics/')
 def tracks_sec_statistics():
     db = get_db()
     tracks_stat = db.execute(
